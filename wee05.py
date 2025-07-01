@@ -1,3 +1,17 @@
+def intersection(foo:str, bar:str) -> str | None:
+    intersection_answer = ""
+    if letter in foo:
+        if letter in bar and not in intersection_answer:
+            intersection_answer += letter
+    return intersection_answer if intersection_answer is not "" else None
+    
+
+
+
+
+
+
+
 
 
 #--------------------------------------------------------------------------------#
