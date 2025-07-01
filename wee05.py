@@ -10,12 +10,22 @@ def is_alphabetical(string:str) -> bool:
     counter = 0
     all_alp = True
     while counter < len(string):
-        alp_ASCII = ord(string(counter))
+        alp_ASCII = ord(string[counter])
         if not(65 <= alp_ASCII <= 90 or 97 <= alp_ASCII <= 122):
             all_alp = False
         counter += 1
     return all_alp
 
+def letter_only(string:str) -> str | None:
+    letter_container = ""
+    counter_LO = 0
+    examinator_LO = ord(string[counter_LO])
+    while counter_LO < len(string):
+        for char in string:
+            if (65 <= examinator_LO <= 90 or 97 <= examinator_LO <=122):
+                letter_container += char +
+        counter_LO += 1
+    return letter_container
 
 
 
