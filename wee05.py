@@ -4,7 +4,20 @@ def intersection(foo:str, bar:str) -> str | None:
         if letter in bar and not in intersection_answer:
             intersection_answer += letter
     return intersection_answer if intersection_answer is not "" else None
-    
+intersection()
+
+def is_alphabetical(string:str) -> bool:
+    counter = 0
+    all_alp = True
+    while counter < len(string):
+        alp_ASCII = ord(string(counter))
+        if not(65 <= alp_ASCII <= 90 or 97 <= alp_ASCII <= 122):
+            all_alp = False
+        counter += 1
+    return all_alp
+
+
+
 
 
 
