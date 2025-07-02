@@ -1,9 +1,9 @@
 def intersection(foo:str, bar:str) -> str | None:
     intersection_answer = ""
-    if letter in foo:
-        if letter in bar and not in intersection_answer:
+    for letter in foo:
+        if letter in bar and letter not in intersection_answer:
             intersection_answer += letter
-    return intersection_answer if intersection_answer is not "" else None
+    return intersection_answer if intersection_answer != "" else None
 
 def is_alphabetical(string:str) -> bool:
     counter = 0
@@ -17,13 +17,10 @@ def is_alphabetical(string:str) -> bool:
 
 def letter_only(string:str) -> str | None:
     letter_container = ""
-    counter_LO = 0
-    examinator_LO = ord(string[counter_LO])
-    while counter_LO < len(string):
-        for char in string:
-            if (65 <= examinator_LO <= 90 or 97 <= examinator_LO <=122):
-                letter_container += char +
-        counter_LO += 1
+    for char in string:
+        if (65 <= ord(char) <= 90 or 97 <= ord(char) <=122):
+            letter_container += char
+    container = letter_container if letter_container != "" else None
     return letter_container
 
 
@@ -34,7 +31,7 @@ def generate_palindrome(string:str) -> str|None:
     for char in string:
         if not (65 <= ord(char) <= 90 or 97 <= ord(char) <= 122):
             letter_check = False
-    if letter_check:
+    if letter_check == True:
         while pos_string >= 0:
             rev_lettering += string[pos_string]
             pos_string -= 1
@@ -44,7 +41,27 @@ def generate_palindrome(string:str) -> str|None:
     return string 
 
 
+def is_palindrome(string:str) -> bool:
+    string = string.lower()
+    letter_check_IP = True
+    for char in string:
+        if not(65<= ord(char) <= 90 or 97 <= ord(char) <= 122):
+            letter_check_IP = False
 
+    palindrome_check = True
+    if letter_check_IP == True:
+        left_side = 0
+        right_side = len(string) - 1
+        while left_side < right_side:
+            if string[left_side] != string[right_side]:
+                palindrome_check = False
+            left_side += 1
+            right_side -= 1
+    else:
+        palindrome_check = False
+    return palindrome_check
+
+        
 
 
 
