@@ -4,7 +4,6 @@ def intersection(foo:str, bar:str) -> str | None:
         if letter in bar and not in intersection_answer:
             intersection_answer += letter
     return intersection_answer if intersection_answer is not "" else None
-intersection()
 
 def is_alphabetical(string:str) -> bool:
     counter = 0
@@ -27,6 +26,22 @@ def letter_only(string:str) -> str | None:
         counter_LO += 1
     return letter_container
 
+
+def generate_palindrome(string:str) -> str|None:
+    letter_check = True
+    rev_lettering = ""
+    pos_string = len(string) - 1
+    for char in string:
+        if not (65 <= ord(char) <= 90 or 97 <= ord(char) <= 122):
+            letter_check = False
+    if letter_check:
+        while pos_string >= 0:
+            rev_lettering += string[pos_string]
+            pos_string -= 1
+        string += rev_lettering
+    else:
+        string = None
+    return string 
 
 
 
